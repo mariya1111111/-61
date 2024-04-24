@@ -1,0 +1,25 @@
+name: CI
+
+on:
+push:
+branches: [ "main" ]
+pull_request:
+branches: [ "main" ]
+
+jobs:
+my_build_job:
+runs-on: ubuntu-latest
+steps:
+- uses: avtions/checkout@v3
+- name: npm unstall, test and buijd
+run: |
+npm install
+npm un build
+- name: Run a one-line script
+run: echo Hello, world!
+- name: Run a multi-line script
+run: |
+echo Add other actions to build,
+echo test, and deploy your project.
+- name: Run JS file for test
+run: node script.js
